@@ -59,6 +59,17 @@
 | **당첨 규칙 정의**            | 로또의 **당첨 기준, 상금, 일치 조건**을 LottoRank **Enum**을 사용하여 명확하게 정의하고 캡슐화한다.                      |
 | **MVC 구조 확립** | 애플리케이션을 Controller, View, Model로 분리하고, 각 클래스의 책임을 명확히 한다.                                |
 
+### D - 1. 프로젝트 구조
+| **패키지**            | **현재 구성**                                             | **역할 및 확장 방향**      |
+| ------------------ | ----------------------------------------------------- | ------------------- |
+| `lotto`            | `Application.java`                                    | 프로그램의 시작점           |
+| `lotto.controller` | `LottoController.java`                                | **애플리케이션의 흐름 제어**   |
+| `lotto.view`       | `InputView.java`, `OutputView.java`                   | 입출력(UI) 책임을 분리      |
+| `lotto.domain`     | `LottoValidate.java`                                  | Lotto 유효성 검증        |
+|                    | `Lotto.java`, `LottoConstants.java`, `LottoRank.java` | **도메인 핵심 규칙** 담당    |
+|                    | `PurchaseAmount.java`                                 | 금액 및 수량 계산          |
+|                    | `Lottos.java`                                         | 구매 로또 목록 관리 및 통계 계산 |
+|                    | `WinningLotto.java`                                   | 당첨 번호 및 보너스 번호 관리   |
 
 ## 🚨 예외 처리 (오류 검증)
 

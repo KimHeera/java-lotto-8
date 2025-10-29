@@ -5,7 +5,7 @@ public class LottoConstants {
     public static final int MAX_NUM = 45;
     public static final int SIZE = 6;
 
-    public static final int LOTTO_PRICE = 1000;
+    public static final int PRICE = 1000;
 
     //output 관련 상수
     public static final String WINNING_MSG = "당첨 통계";
