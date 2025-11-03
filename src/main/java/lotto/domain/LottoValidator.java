@@ -29,6 +29,7 @@ public class LottoValidator {
         validateNumRangeAndDup(numbers);
     }
 
+    //단일 번호 검증(당첨과 보너스 모두 사용)
     public static void validateSingleNum(int number){
         if(number < LottoConstants.MIN_NUM || number > LottoConstants.MAX_NUM) {
             throw new IllegalArgumentException(
@@ -36,6 +37,14 @@ public class LottoValidator {
         }
     }
 
+    //보너스 번호 중복 검증
+    public static void validateBonusDup(List<Integer> WinningNumbers, int bonusNum){
+        if(WinningNumbers.contains(bonusNum)){
+            throw new IllegalArgumentException(LottoConstants.ERROR_PREFIX + "보너스 번호는 당첨 번호와 중복될 수 없습니다.");
+        }
+    }
+
+    //String to int
     private static int validateNumeric(String input, String msg){
         try{
             input = input.trim();
@@ -45,6 +54,7 @@ public class LottoValidator {
         }
     }
 
+    //범위 & 중복 검사
     private static void validateNumRangeAndDup(List<Integer> numbers){
         Set<Integer> uniqueNum = numbers.stream()
                 .peek(LottoValidator::validateSingleNum)
