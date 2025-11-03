@@ -10,16 +10,19 @@ import java.util.stream.IntStream;
 
 public class LottoStore {
     private final List<Lotto> purchasedLottos;
+    private final int totalPurchaseAmount;
 
     public LottoStore(PurchaseAmount purchaseAmount){
         int cnt = purchaseAmount.getLottoCnt();
 
         this.purchasedLottos = issueLottos(cnt);
+        this.totalPurchaseAmount = purchaseAmount.getAmount();
     }
 
     // test용 생성자
-    public LottoStore(List<Lotto> purchasedLottos) {
+    public LottoStore(List<Lotto> purchasedLottos, int totalPurchaseAmount) {
         this.purchasedLottos = purchasedLottos;
+        this.totalPurchaseAmount = totalPurchaseAmount;
     }
 
     // 구매 수량만큼의 로또 발행, List<Lotto>로 반환
@@ -67,5 +70,9 @@ public class LottoStore {
 
     public List<Lotto> getPurchasedLottos(){
         return Collections.unmodifiableList(purchasedLottos);
+    }
+
+    public int getTotalPurchaseAmount() {
+        return totalPurchaseAmount;
     }
 }

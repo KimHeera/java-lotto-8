@@ -14,8 +14,6 @@ public class OutputView {
     private static final String PROFIT_RATE_FORMAT = "총 수익률은 %.1f%%입니다.";
     private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#,###.0");
 
-    private OutputView() {}
-
     public static void printLottos(List<Lotto> purchasedLottos){
         System.out.println(String.format(COUNT_MESSAGE, purchasedLottos.size()));
         purchasedLottos.stream()
