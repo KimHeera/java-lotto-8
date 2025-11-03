@@ -26,6 +26,7 @@ public class LottoValidator {
             throw new IllegalArgumentException(LottoConstants.ERROR_PREFIX + "로또 번호는 " + LottoConstants.SIZE + "개여야 합니다.");
         }
 
+        validateNumRangeAndDup(numbers);
     }
 
     public static void validateSingleNum(int number){
