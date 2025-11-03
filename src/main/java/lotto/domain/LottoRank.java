@@ -38,4 +38,8 @@ public enum LottoRank {
                 .findFirst() //필터링 통과한 1, 2등 반환
                 .orElse(MISS); //모두 조건에 안맞으면 MISS 반환
     }
+
+    public long getPrize(){
+        return prize;
+    }
 }
