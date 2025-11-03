@@ -46,7 +46,7 @@ public class LottoStoreTest {
                     new Lotto(List.of(1, 2, 3, 9, 10, 11))
             );
 
-            LottoStore lottoStore = new LottoStore(new PurchaseAmount("5000"));
+            LottoStore lottoStore = new LottoStore(purchasedLottos);
 
             Map<LottoRank, Integer> statistics = lottoStore.calculateStatistics(winningLotto);
 

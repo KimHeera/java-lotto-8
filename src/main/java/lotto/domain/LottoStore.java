@@ -17,6 +17,11 @@ public class LottoStore {
         this.purchasedLottos = issueLottos(cnt);
     }
 
+    // test용 생성자
+    public LottoStore(List<Lotto> purchasedLottos) {
+        this.purchasedLottos = purchasedLottos;
+    }
+
     // 구매 수량만큼의 로또 발행, List<Lotto>로 반환
     public static List<Lotto> issueLottos(int cnt){
         return IntStream.range(0, cnt)
